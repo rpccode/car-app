@@ -1,4 +1,4 @@
-<ion-app>
+<ion-app *ngIf="isAuthenticated; else loginTemplate">
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
@@ -27,3 +27,8 @@
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>
+
+<!-- Template para el login -->
+<ng-template #loginTemplate>
+  <ion-router-outlet></ion-router-outlet>
+</ng-template>

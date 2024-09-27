@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <img src="assets/OIP.jpeg" alt="Logo" class="logo">
+    <h1 class="title">Welcome Back</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">
+        <p>Email is required</p>
+      </ion-text>
+      <ion-text color="danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('email')">
+        <p>Please enter a valid email address</p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">
+        <p>Password is required</p>
+      </ion-text>
+      <ion-text color="danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('minlength')">
+        <p>Password must be at least 6 characters long</p>
+      </ion-text>
+
+      <ion-button expand="block" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+    </form>
+  </div>
+</ion-content>
