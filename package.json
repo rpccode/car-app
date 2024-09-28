@@ -36,6 +36,7 @@
     "@ngrx/store-devtools": "^18.0.2",
     "@ngx-pwa/local-storage": "^18.0.0",
     "astral-regex": "^2.0.0",
+    "axios": "^1.7.7",
     "car-app": "file:",
     "get-caller-file": "^2.0.5",
     "ionicons": "^7.2.1",

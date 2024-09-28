@@ -63,7 +63,7 @@ import { loginSuccess } from './store/actions/auth.actions';
 })
 export class AppComponent implements OnInit {
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
+    { title: 'Home', url: '/folder/inbox', icon: 'mail' },
     { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
     { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
     { title: 'Archived', url: '/folder/archived', icon: 'archive' },
@@ -94,6 +94,7 @@ export class AppComponent implements OnInit {
   }
   async ngOnInit() {
     const user = await this.authService.getPersistedUser();
+    console.log(user)
     if (user) {
       this.store.dispatch(loginSuccess({ user }));
     }

@@ -11,8 +11,8 @@ import { User } from 'src/app/models/user.model';
 export class AuthService {
   constructor(private http: HttpClient, private storageService: StorageService) {}
 
-  login(email: string, password: string): Observable<User> {
-    return this.http.post<User>('https://api.example.com/login', { email, password });
+  login(username: string, password: string): Observable<User> {
+    return this.http.post<User>('http://localhost:3000/login', { username, password });
   }
 
   async persistUser(user: User) {
